@@ -1,0 +1,41 @@
+#include <iostream>
+#include <ctime>
+using namespace std;
+
+int main() {
+	int go, dice1, dice2, balance = 0;
+	void roll(int&);
+	void updateBalance(int, int, int&);
+	srand(static_cast<int>(time(0)));
+	go = 0;
+
+	while (go < 10) {
+		roll(dice1);
+		roll(dice2);
+		cout << "Dices are: " << dice1 << "and" << dice2 << endl;
+		updateBalance(dice1, dice2, balance);
+		
+		go = go++;
+	}
+	cout << "The final balance is:" << balance << endl;
+	system("pause");
+	return 0;
+}
+	void roll(int&) 
+	{
+		int diceValue = (rand() % 6) + 1;
+	}
+	void calculateWinning(int dice1, int dice2, int& winning)
+	{
+		if (dice1 == dice2)
+			winning = dice1;
+		else
+			winning = 0;
+	}
+	void updateBalance(int dice1, int dice2, int& balance)
+	{
+		void calculateWinning(int, int, int&);
+		int winning;
+		calculateWinning(dice1, dice2, winning);
+		balance = (balance + winning);
+	}
