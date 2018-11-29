@@ -1,0 +1,62 @@
+#include <iostream>
+using namespace std;
+int main() {
+	int mark;
+	void readValidMark(int& mark);
+	cout << "\nEnter a mark: ";
+	readValidMark(mark);
+	if (mark > 40)
+		cout << mark << " is a pass mark! ";
+	else
+		cout << mark << " is NOT a pass mark! ";
+	cout << "\n\n";
+	system("pause");
+	return 0;
+}
+void readValidMark(int& mark) {
+	
+	cin >> mark;
+	while ((mark < 0) || (mark > 100))
+	{
+		cout << "ERROR: Please enter a valid mark: ";
+		cin >> mark;
+	}
+}
+#include <iostream>
+using namespace std;
+int main() {
+	void drawALine(int);
+	int length;
+	cout << "Enter the length of the line: ";
+	cin >> length;
+	drawALine();
+	cout << "\n\n";
+	system("pause");
+	return 0;
+}
+void  drawALine(int len) {
+	for (int i(0); i < len; ++i)
+		cout << "*";
+}
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	void swapValues(char& a, char& b);
+	char x, y;
+	cout << "Enter values to be sorted : ";
+	cin >> x >> y;
+	cout << "\nValues before sorting: " << x << " " << y;
+	if (x > y)
+		swapValues(x, y);
+	cout << "\nValues after sorting: " << x << " " << y;
+	cout << "\n\n";
+	system("pause");
+	return 0;
+}
+void swapValues(char& a, char& b) {
+	const char temp = a;
+	a = b;
+	b = temp;
+}
