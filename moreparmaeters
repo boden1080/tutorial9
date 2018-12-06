@@ -1,0 +1,27 @@
+//include libraries
+#include <iostream>	//for cin >> and cout <<
+using namespace std;
+
+
+int main() {
+	int year, age;		//local variables
+	void readInYearOfBirth(int&); 	//prototype
+	void calculateAgeFromYearOfBirth(int, int&);	//prototype
+	void displayAge(int); 	//prototype
+	readInYearOfBirth(year);
+	calculateAgeFromYearOfBirth(year, age);
+	displayAge(age);
+	cout << "\n";
+	system("pause");	//to hold the output screen
+	return 0;
+}
+void readInYearOfBirth(int& year) {
+	cout << "\nEnter your year of birth: ";
+	cin >> year;
+}
+void calculateAgeFromYearOfBirth(int year, int& age) {
+	age = 2018 - year;
+}
+void displayAge(int age) {
+	cout << "\nYou are (about) " << age << " year old.";
+}
